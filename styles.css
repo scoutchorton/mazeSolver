@@ -1,0 +1,112 @@
+html, body {
+	font-family: "Roberto", sans-serif;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: lightgrey;
+	user-select: none;
+}
+
+button {
+	outline: none;
+	box-shadow: 0 5px 4px 2px grey !important;
+	border: none;
+	transform: translate(0, 0);
+	transition: transform 1s;
+	margin: 5px;
+}
+button:hover {
+	transform: translate(0, -5px);
+	transition: transform 1s;
+}
+button:disabled {
+	transform: translate(0, 0);
+	color: black;
+}
+#instructionOpen {
+	box-shadow: none !important;
+}
+
+h2 {
+	padding: 15px 0 !important;
+	width: 100%;
+	height: 50px;
+	margin: 0 !important;
+}
+
+.box {
+	box-shadow: 0 5px 5px 2px grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: white;
+	padding: 5px;
+	margin: 5px;
+}
+
+#instructionWrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #50505050;
+	z-index: 5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: -100%;
+	opacity: 0;
+	transition: top 2s, opacity 2s;
+}
+#instructionWrapper.visible {
+	top: 0;
+	opacity: 1;
+	transition: top 2s, opacity 2s;
+}
+#InstructionBox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 50%;
+	min-width: 200px;
+	min-height: 200px;
+	max-height: calc(100% - 20px);
+	overflow-y: scroll;
+}
+#InstructionBox > span {
+	text-align: center;
+	padding: 10px;
+}
+#InstructionBox > span > .box {
+	display: inline-block;
+}
+
+#buttonWrapper {
+	display: flex;
+	flex-direction: column;
+}
+#buttonWrapper > div {
+	display: flex;
+	flex-direction: row;
+}
+#buttonWrapper > hr {
+	width: 100%;
+}
+
+#mazeWrapper {
+	background: white;
+}
+
+#maze {
+	border-collapse: collapse;
+}
+#maze > tbody > tr > td {
+	border: 1px solid #505050;
+	margin: 0;
+	padding: 5px;
+	background: lightgrey;
+	/*border-spacing: 0;*/
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Maze Solver</title>
+		<link rel="stylesheet" href="./styles.css">
+	</head>
+	<body>
+		<div id="instructionWrapper">
+			<div class="box" id="InstructionBox">
+				<h4>How to Use</h4>
+				<span>This site assumes that you have some sort of maze, and works only with mazes that have a rectangular grid. I use <a href="http://mazegenerator.net/">mazegenerator.net</a> for testing and generating mazes. You can go there to make a maze for yourself.</span>
+				<span>The maze assumes you are starting inside the maze. If there is an opening for the entrance, treat it like a wall that you cannot go through. The first square/block you would go in upon entering the maze would be the block this program is on.</span>
+				<span>The arrow in the blinking block is the current orientation of the solver. Above the maze, there is a question on whether you can move in that direction. If there is a wall, click <button disabled class="box">No</button>, but if you can move, then click <button disabled class="box">Yes</button>.<!-- If you have reached the exit (assuming you move out of the maze), click <button disabled class="box">Exit</button>.--></span>
+				<span>When the cursor reaches a dead end, the code will attempt to navigate you back out of it. The way the logic works starts with analyzing a direction. If it cannot move in that direction, the cursor will spin clockwise. If it can move, it will make that move and spin counter-clockwise. This is similar to a wall-hugging method, which will try to keep the wall on one side relative to the maze solver. With this instance, the program assumes that there are no starting walls, making it theoretically possible to solve a maze with places larger than a one by one block without walls. For example, if the maze has spaces of two by two or more, the solver will be able to solve the maze despite it.</span>
+				<span>Click outside this text box to exit this prompt.</span>
+			</div>
+		</div>
+		<h2 class="box"><span>Maze Solver</span></h2>
+		<h4 class="box"><button class="box" id="instructionOpen"><strong>Click for Instructions</strong></button></h4>
+		<div class="box" id="buttonWrapper">
+			<span>Can I move <span id="directionPrompt"></span>?</span>
+			<div>
+				<button class="box" id="directionYes">Yes</button>
+				<button class="box" id="directionNo">No</button><!--
+				<button class="box" id="directionExit">Exit</button>-->
+			</div>
+		</div>
+		<!-- Unicode arrows: ←→↑↓ -->
+		<div class="box" id="mazeWrapper"><table id="maze"><tr><td>↑</td></tr></table></div>
+		<script src="./script.js" charset="utf-8"></script>
+	</body>
+</html>
